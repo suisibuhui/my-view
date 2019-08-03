@@ -11,7 +11,7 @@ import android.view.View;
 
 public class MultiTouchView extends View {
 
-    private static final float WIDTH = ViewUtils.dp2px(200);
+    private static final float WIDTH = ViewUtils.dp2px(100);
     private Bitmap bitmap;
     private Paint paint;
 
@@ -21,8 +21,9 @@ public class MultiTouchView extends View {
 
     public MultiTouchView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        bitmap = ViewUtils.getAvatar(getResources(), R.drawable.touiang, (int) WIDTH);
+        bitmap = ViewUtils.getAvatar(getResources(), R.drawable.line, (int) WIDTH);
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
+
     }
 
     public MultiTouchView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -48,7 +49,8 @@ public class MultiTouchView extends View {
             case MotionEvent.ACTION_DOWN:
                 offSetX = event.getX();
                 offSetY = event.getY();
-
+                currentMoveX = moveX;
+                currentMoveY = moveY;
                 break;
 
             case MotionEvent.ACTION_MOVE:
@@ -58,8 +60,6 @@ public class MultiTouchView extends View {
                 break;
 
             case MotionEvent.ACTION_UP:
-                currentMoveX = moveX;
-                currentMoveY = moveY;
                 break;
 
         }

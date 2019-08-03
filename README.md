@@ -12,7 +12,7 @@ my android view
        <attr name="textSize" format="dimension"/>
   
 可在xml中设置运动圆环的背景颜色，进度条颜色，文字颜色，和文字大小，默认宽高100dp。  
-![效果图](https://github.com/suisibuhui/my-view/blob/master/circleview.gif)
+![效果图](https://github.com/suisibuhui/my-view/blob/master/gifs/circleview.gif)
 
 ### **2.CircleView**
 ---
