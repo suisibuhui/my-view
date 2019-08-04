@@ -47,7 +47,7 @@
 
 - MultiTouchGrapView 抢占式
 
-![效果图](https://github.com/suisibuhui/my-view/blob/master/gifs/circleview.gif)
+![效果图](https://github.com/suisibuhui/my-view/blob/master/gifs/MultiTouchGrapView.gif)
 
 - MultiTouchCooperateView 协作式
 
