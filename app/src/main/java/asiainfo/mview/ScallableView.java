@@ -159,7 +159,7 @@ public class ScallableView extends View {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
-                //参数说明 当前位置 x y，速度 x y，x值的最大最小值，y值的最大最小值。
+                //参数说明 当前位置 sumX sumY，速度 sumX sumY，x值的最大最小值，y值的最大最小值。
                 overScroller.fling((int) offSetX, (int) offSetY, (int) velocityX, (int) velocityY, (int) -widthRange, (int) widthRange, (int) -heightRange, (int) heightRange);
                 isFlingFlag = true;
                 postOnAnimation(myRunnable);
@@ -200,8 +200,8 @@ public class ScallableView extends View {
                 float heightRatio = detector.getFocusY() / getHeight();
                 X += (widthRatio-X/getWidth())*widthPart;
                 Y += (heightRatio-Y/getHeight())*HeightPart;
-                Log.i("dongdongdongdong","x.getX="+(offSetX/(1f-bigScale/smallScale)+getWidth()/2f)
-                +"x.getY="+(offSetY/(1f-bigScale/smallScale)+getHeight()/2f));
+                Log.i("dongdongdongdong","sumX.getX="+(offSetX/(1f-bigScale/smallScale)+getWidth()/2f)
+                +"sumX.getY="+(offSetY/(1f-bigScale/smallScale)+getHeight()/2f));
                 if(offSetX == 0 && offSetY == 0){
                     offSetX = (detector.getFocusX()-getWidth()/2f)-(detector.getFocusX()-getWidth()/2f)*bigScale/smallScale;
                     offSetY = (detector.getFocusY()-getHeight()/2f)-(detector.getFocusY()-getHeight()/2f)*bigScale/smallScale;
